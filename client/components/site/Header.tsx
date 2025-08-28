@@ -13,8 +13,12 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur border-b border-border">
       <div className="container mx-auto flex items-center justify-between py-4">
         <Link to="/" className="flex items-center gap-2">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-fuchsia-500 text-white font-bold">P</span>
-          <span className="font-extrabold tracking-tight text-lg">PlacePrep AI</span>
+          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-fuchsia-500 text-white font-bold">
+            P
+          </span>
+          <span className="font-extrabold tracking-tight text-lg">
+            PlacePrep AI
+          </span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (

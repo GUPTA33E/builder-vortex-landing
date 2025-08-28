@@ -7,12 +7,27 @@ export default function Interview() {
   const feedback = useMemo(() => {
     const notes: { ok: boolean; msg: string }[] = [];
     const text = answer.trim();
-    if (text.length < 80) notes.push({ ok: false, msg: "Answer is quite short. Aim for 1-2 minutes." });
-    if (!/situation|task|action|result/i.test(text)) notes.push({ ok: false, msg: "Consider using the STAR method (Situation, Task, Action, Result)." });
-    if (/\b(um+|uh+|like)\b/i.test(text)) notes.push({ ok: false, msg: "Reduce filler words for clarity." });
-    if (/team|collaborat|mentor|stakeholder/i.test(text)) notes.push({ ok: true, msg: "Good mention of collaboration and teamwork." });
-    if (/impact|result|outcome|metric|%|improv|reduce|increase/i.test(text)) notes.push({ ok: true, msg: "Strong focus on measurable impact." });
-    if (notes.length === 0) notes.push({ ok: true, msg: "Great structure and clarity!" });
+    if (text.length < 80)
+      notes.push({
+        ok: false,
+        msg: "Answer is quite short. Aim for 1-2 minutes.",
+      });
+    if (!/situation|task|action|result/i.test(text))
+      notes.push({
+        ok: false,
+        msg: "Consider using the STAR method (Situation, Task, Action, Result).",
+      });
+    if (/\b(um+|uh+|like)\b/i.test(text))
+      notes.push({ ok: false, msg: "Reduce filler words for clarity." });
+    if (/team|collaborat|mentor|stakeholder/i.test(text))
+      notes.push({
+        ok: true,
+        msg: "Good mention of collaboration and teamwork.",
+      });
+    if (/impact|result|outcome|metric|%|improv|reduce|increase/i.test(text))
+      notes.push({ ok: true, msg: "Strong focus on measurable impact." });
+    if (notes.length === 0)
+      notes.push({ ok: true, msg: "Great structure and clarity!" });
     return notes;
   }, [answer]);
 
@@ -20,8 +35,12 @@ export default function Interview() {
     <section className="container mx-auto py-12 max-w-3xl">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-extrabold tracking-tight">AI HR Interview Practice</h1>
-          <p className="text-foreground/70">Paste or write your answer below to get instant, on-device feedback.</p>
+          <h1 className="text-3xl font-extrabold tracking-tight">
+            AI HR Interview Practice
+          </h1>
+          <p className="text-foreground/70">
+            Paste or write your answer below to get instant, on-device feedback.
+          </p>
         </div>
         <Sparkles className="hidden md:block h-10 w-10 text-fuchsia-500" />
       </div>
@@ -43,7 +62,9 @@ export default function Interview() {
                 ) : (
                   <XCircle className="mt-0.5 h-4 w-4 text-red-500" />
                 )}
-                <span className={f.ok ? "text-emerald-700" : "text-red-700"}>{f.msg}</span>
+                <span className={f.ok ? "text-emerald-700" : "text-red-700"}>
+                  {f.msg}
+                </span>
               </li>
             ))}
           </ul>
