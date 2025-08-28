@@ -16,14 +16,72 @@ const questions: Q[] = [
   },
   {
     q: "Simplify: (3/4) of 200",
-    options: ["120", "130", "140", "150"],
-    answer: 0,
-    explain: "(3/4) * 200 = 150, sorry that's wrong. Wait, correct is 150? Let's compute: 200 * 0.75 = 150. Answer option index 3 is 150.",
+    options: ["120", "130", "150", "180"],
+    answer: 2,
+    explain: "(3/4) * 200 = 150.",
+  },
+  {
+    q: "What is 25% of 360?",
+    options: ["72", "80", "90", "96"],
+    answer: 2,
+    explain: "25% = 1/4, so 360/4 = 90.",
+  },
+  {
+    q: "Find the simple interest on ₹1000 at 10% per annum for 2 years.",
+    options: ["₹100", "₹200", "₹250", "₹300"],
+    answer: 1,
+    explain: "SI = PRT/100 = 1000×10×2/100 = ₹200.",
+  },
+  {
+    q: "An item costs ₹400 and is sold for ₹460. What is the profit percentage?",
+    options: ["10%", "12.5%", "15%", "20%"],
+    answer: 2,
+    explain: "Profit = 60. Profit% = 60/400 × 100 = 15%.",
+  },
+  {
+    q: "Divide ₹300 in the ratio 2:3. What is the second person's share?",
+    options: ["₹100", "₹120", "₹150", "₹180"],
+    answer: 3,
+    explain: "Total parts = 5 ⇒ each = 300/5 = 60; second = 3×60 = ₹180.",
+  },
+  {
+    q: "A can finish a work in 12 days and B in 18 days. How many days together?",
+    options: ["6", "7.2", "8", "9"],
+    answer: 1,
+    explain: "Rates add: 1/12 + 1/18 = 5/36 ⇒ time = 36/5 = 7.2 days.",
+  },
+  {
+    q: "A fair die is rolled. Probability of getting an even number?",
+    options: ["1/3", "1/2", "2/3", "3/4"],
+    answer: 1,
+    explain: "Even outcomes = {2,4,6} (3 of 6) ⇒ 3/6 = 1/2.",
+  },
+  {
+    q: "How many permutations of the letters of the word 'CAT'?",
+    options: ["3", "4", "6", "9"],
+    answer: 2,
+    explain: "3! = 6.",
+  },
+  {
+    q: "What is the average of 10, 20, 30, 40, 50?",
+    options: ["25", "30", "35", "40"],
+    answer: 1,
+    explain: "Sum = 150; count = 5 ⇒ 150/5 = 30.",
+  },
+  {
+    q: "Find the LCM of 12 and 18.",
+    options: ["6", "12", "18", "36"],
+    answer: 3,
+    explain: "LCM(12,18) = 36.",
+  },
+  {
+    q: "Find the next term: 2, 6, 12, 20, ?",
+    options: ["24", "28", "30", "32"],
+    answer: 2,
+    explain: "Differences +4, +6, +8 ⇒ next +10 ⇒ 20+10 = 30.",
   },
 ];
 
-// Fix incorrect answer index in the data above at runtime to keep code self-contained
-questions[1].answer = 3;
 
 export default function Aptitude() {
   const [idx, setIdx] = useState(0);
