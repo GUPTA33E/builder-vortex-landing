@@ -28,9 +28,9 @@ const App = () => (
             <Route path="coding" element={<Coding />} />
             <Route path="aptitude" element={<Aptitude />} />
             <Route path="interview" element={<Interview />} />
+          <Route path="*" element={<NotFound />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
