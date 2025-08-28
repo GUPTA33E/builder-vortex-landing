@@ -11,6 +11,11 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+import SiteLayout from "@/components/site/SiteLayout";
+import Coding from "@/pages/Coding";
+import Aptitude from "@/pages/Aptitude";
+import Interview from "@/pages/Interview";
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -18,7 +23,12 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route element={<SiteLayout />}>
+            <Route index element={<Index />} />
+            <Route path="coding" element={<Coding />} />
+            <Route path="aptitude" element={<Aptitude />} />
+            <Route path="interview" element={<Interview />} />
+          </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
